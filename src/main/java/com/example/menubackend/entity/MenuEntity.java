@@ -1,7 +1,7 @@
-package com.example.menubackend.Entity;
+package com.example.menubackend.entity;
 
-import com.example.menubackend.Entity.utils.RawMaterial;
-import com.example.menubackend.Entity.utils.Step;
+import com.example.menubackend.entity.utils.RawMaterial;
+import com.example.menubackend.entity.utils.Step;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

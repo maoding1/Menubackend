@@ -1,4 +1,4 @@
-package com.example.menubackend.Entity.utils;
+package com.example.menubackend.entity.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

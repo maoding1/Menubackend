@@ -1,6 +1,6 @@
 package com.example.menubackend.service;
 
-import backend.chat.pojo.entity.UserEntity;
+import com.example.menubackend.entity.UserEntity;
 
 public interface UserService {
     void login(Long uid, String password);

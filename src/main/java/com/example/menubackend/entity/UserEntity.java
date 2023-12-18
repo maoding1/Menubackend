@@ -1,7 +1,8 @@
-package com.example.menubackend.Entity;
+package com.example.menubackend.entity;
 
-import com.example.menubackend.Entity.utils.Ingredient;
+import com.example.menubackend.entity.utils.Ingredient;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,8 +24,14 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    @Column(unique = true)
+    private Long uid;
+
+    @NotNull
     private String userName;
 
+    @NotNull
     private String password;
 
     private List<Long> favouriteMenusId;

@@ -1,11 +1,11 @@
 package com.example.menubackend.service.impl;
 
-import backend.chat.dao.UserDao;
-import backend.chat.exception.BizError;
-import backend.chat.pojo.entity.UserEntity;
-import backend.chat.service.UserService;
-import io.exception.BizException;
-import io.exception.CommonErrorType;
+import com.example.menubackend.entity.UserEntity;
+import com.example.menubackend.dao.UserDao;
+import com.example.menubackend.io.exception.BizError;
+import com.example.menubackend.io.exception.BizException;
+import com.example.menubackend.io.exception.CommonErrorType;
+import com.example.menubackend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,14 +13,13 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserDao userDao;
-    private final Long base = 100000000L;
 
     /**
      * 用户注册
      * @param username 用户名
      * @param password 密码
      */
-    @Override
+    @Override   //TODO
     public void register(String username, String password) {
         Long uid = userDao.findAll().size()+base;
 
@@ -33,7 +32,7 @@ public class UserServiceImpl implements UserService {
      * @param uid 账号
      * @return         用户实体
      */
-    @Override
+    @Override   //TODO
     public UserEntity findByUid(Long uid) {
         return userDao.findByUid(uid);
     }
@@ -55,7 +54,7 @@ public class UserServiceImpl implements UserService {
      * 编辑用户信息
      * @param username 用户名
      */
-    @Override
+    @Override   //TODO
     public void editInfo(Long uid, String username){
         UserEntity user = userDao.findByUid(uid);
         if(user == null){
