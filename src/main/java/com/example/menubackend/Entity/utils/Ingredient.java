@@ -11,5 +11,4 @@ import lombok.NoArgsConstructor;
 @Embeddable
 public class Ingredient {
     private String name;
-
 }

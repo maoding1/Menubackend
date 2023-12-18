@@ -31,7 +31,7 @@ public class SimpleDataLoader implements CommandLineRunner {
         rawMaterials.add(new RawMaterial(new Ingredient("ingredient1"), "1勺"));
         rawMaterials.add(new RawMaterial(new Ingredient("ingredient2"), "2杯"));
 
-        exampleMenu.setName("testName").setPreviewImgUrl("example.com").setClickCount(100).setSteps(steps).setRawMaterials(rawMaterials);
+        exampleMenu.setMenuName("testName").setPreviewImgUrl("example.com").setClickCount(100).setSteps(steps).setRawMaterials(rawMaterials);
 
         menuDao.save(exampleMenu);
     }
