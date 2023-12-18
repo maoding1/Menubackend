@@ -29,6 +29,7 @@ public class User {
 
     private List<Long> favouriteMenusId;
 
+    @ElementCollection
     private List<Ingredient> unLikes;
 
 }
