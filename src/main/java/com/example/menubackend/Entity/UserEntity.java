@@ -1,9 +1,9 @@
 package com.example.menubackend.Entity;
 
-import com.example.menubackend.Entity.utils.RawMaterial;
-import com.example.menubackend.Entity.utils.Step;
+import com.example.menubackend.Entity.utils.Ingredient;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
@@ -11,24 +11,25 @@ import lombok.experimental.Accessors;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "user1")  // table name "user" is a reserved word in H2
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class Menu {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String userName;
 
-    private String previewImgUrl;
+    private String password;
 
-    private int clickCount;
+    private List<Long> favouriteMenusId;
 
-    private List<RawMaterial> rawMaterials;
+    private List<Ingredient> unLikes;
 
-    private List<Step> steps;
 }
+
