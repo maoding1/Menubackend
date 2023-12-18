@@ -1,20 +1,17 @@
 package com.example.menubackend.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
 @Data
 @Schema(description = "注册请求")
 public class RegisterRequest {
 
-    @Schema(description = "用户名", required = true)
+    @Schema(description = "账号", required = true)
     @NotNull
-    @Size(min = 4, max = 16, message = "用户名长度必须在 4-16 之间")
-    @Pattern(regexp = "^[A-Za-z\\d-_]*$", message = "用户名只能包含字母,数字,下划线和连字符")
-    private String username;
+    @Size(min = 4, max = 24, message = "账号长度必须在 4-24 之间")
+    private String uid;
 
     @Schema(description = "密码", required = true)
     @NotNull

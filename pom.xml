@@ -66,12 +66,18 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!--mysql驱动-->
+<!--		&lt;!&ndash;mysql驱动&ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>mysql</groupId>-->
+<!--			<artifactId>mysql-connector-java</artifactId>-->
+<!--			<scope>runtime</scope> &lt;!&ndash;只在运行时被使用编译时不被放在项目内&ndash;&gt;-->
+<!--			<version>8.0.28</version>-->
+<!--		</dependency>-->
+
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope> <!--只在运行时被使用编译时不被放在项目内-->
-			<version>8.0.28</version>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>

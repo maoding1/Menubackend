@@ -3,9 +3,9 @@ package com.example.menubackend.service;
 import com.example.menubackend.entity.UserEntity;
 
 public interface UserService {
-    void login(Long uid, String password);
-    void register(String username, String password);
+    boolean login(String uid, String password);
+    boolean register(String uid, String password);
 
-    UserEntity findByUid(Long uid);
-    void editInfo(Long uid,String username);
+    UserEntity findByUid(String uid);
+    void editInfo(String uid,String username);
 }

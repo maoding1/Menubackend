@@ -26,16 +26,18 @@ public class UserEntity {
 
     @NotNull
     @Column(unique = true)
-    private Long uid;
+    private String uid;
 
     @NotNull
-    private String userName;
+    private String username;
 
     @NotNull
     private String password;
 
+    @ElementCollection
     private List<Long> favouriteMenusId;
 
+    @ElementCollection
     private List<Ingredient> unLikes;
 
 }
