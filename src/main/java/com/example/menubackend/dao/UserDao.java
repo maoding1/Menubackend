@@ -1,8 +1,9 @@
-package com.example.menubackend.Dao;
+package com.example.menubackend.dao;
 
-import com.example.menubackend.Entity.User;
+import com.example.menubackend.entity.UserEntity;
+import com.example.menubackend.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserDao extends JpaRepository<User, Long> {
-
+public interface UserDao extends JpaRepository<UserEntity, Long> {
+    UserEntity findByUid(String uid);
 }

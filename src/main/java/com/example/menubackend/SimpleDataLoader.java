@@ -1,10 +1,10 @@
 package com.example.menubackend;
 
-import com.example.menubackend.Dao.MenuDao;
-import com.example.menubackend.Entity.Menu;
-import com.example.menubackend.Entity.utils.Ingredient;
-import com.example.menubackend.Entity.utils.RawMaterial;
-import com.example.menubackend.Entity.utils.Step;
+import com.example.menubackend.dao.MenuDao;
+import com.example.menubackend.entity.MenuEntity;
+import com.example.menubackend.entity.utils.Ingredient;
+import com.example.menubackend.entity.utils.RawMaterial;
+import com.example.menubackend.entity.utils.Step;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -22,7 +22,7 @@ public class SimpleDataLoader implements CommandLineRunner {
     }
     @Override
     public void run(String... args) throws Exception {
-        Menu exampleMenu = new Menu();
+        MenuEntity exampleMenu = new MenuEntity();
         List<Step> steps = new ArrayList<>();
         steps.add(new Step("description1", "imageurl1"));
         steps.add(new Step("description2", "imageurl2"));

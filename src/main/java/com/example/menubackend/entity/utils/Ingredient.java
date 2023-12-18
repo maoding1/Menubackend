@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Embeddable
 public class Ingredient {
-    private Long id;
 
     private String name;
 }
