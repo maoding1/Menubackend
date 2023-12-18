@@ -58,3 +58,5 @@ build/
 ### VS Code ###
 .vscode/
 >>>>>>> ba955b4 (init)
+
+src/main/resources/application.yaml
