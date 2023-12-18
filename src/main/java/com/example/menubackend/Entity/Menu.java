@@ -28,7 +28,9 @@ public class Menu {
 
     private int clickCount;
 
+    @ElementCollection
     private List<RawMaterial> rawMaterials;
 
+    @ElementCollection
     private List<Step> steps;
 }
