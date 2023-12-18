@@ -1,6 +1,6 @@
 package com.example.menubackend.entity.utils;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,5 +13,4 @@ public class Ingredient {
     private Long id;
 
     private String name;
-
 }
