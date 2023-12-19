@@ -1,6 +1,6 @@
 package com.example.menubackend;
 
-import com.example.menubackend.dao.MenuDao;
+import com.example.menubackend.Dao.MenuDao;
 import com.example.menubackend.entity.MenuEntity;
 import com.example.menubackend.entity.utils.Ingredient;
 import com.example.menubackend.entity.utils.RawMaterial;
@@ -22,17 +22,17 @@ public class SimpleDataLoader implements CommandLineRunner {
     }
     @Override
     public void run(String... args) throws Exception {
-        MenuEntity exampleMenu = new MenuEntity();
-        List<Step> steps = new ArrayList<>();
-        steps.add(new Step("description1", "imageurl1"));
-        steps.add(new Step("description2", "imageurl2"));
-
-        List<RawMaterial> rawMaterials = new ArrayList<>();
-        rawMaterials.add(new RawMaterial(new Ingredient("ingredient1"), "1勺"));
-        rawMaterials.add(new RawMaterial(new Ingredient("ingredient2"), "2杯"));
-
-        exampleMenu.setMenuName("testName").setPreviewImgUrl("example.com").setClickCount(100).setSteps(steps).setRawMaterials(rawMaterials);
-
-        menuDao.save(exampleMenu);
+//        MenuEntity exampleMenu = new MenuEntity();
+//        List<Step> steps = new ArrayList<>();
+//        steps.add(new Step("description1", "imageurl1"));
+//        steps.add(new Step("description2", "imageurl2"));
+//
+//        List<RawMaterial> rawMaterials = new ArrayList<>();
+//        rawMaterials.add(new RawMaterial(new Ingredient("ingredient1"), "1勺"));
+//        rawMaterials.add(new RawMaterial(new Ingredient("ingredient2"), "2杯"));
+//
+//        exampleMenu.setMenuName("testName").setPreviewImgUrl("example.com").setClickCount(100).setSteps(steps).setRawMaterials(rawMaterials);
+//
+//        menuDao.save(exampleMenu);
     }
 }

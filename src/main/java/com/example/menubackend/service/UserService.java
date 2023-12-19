@@ -8,4 +8,6 @@ public interface UserService {
 
     UserEntity findByUid(String uid);
     void editInfo(String uid,String username);
+
+    boolean addUnlike(String uid, String ingredientName);
 }

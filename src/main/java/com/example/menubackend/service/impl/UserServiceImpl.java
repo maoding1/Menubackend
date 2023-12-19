@@ -2,11 +2,14 @@ package com.example.menubackend.service.impl;
 
 import com.example.menubackend.entity.UserEntity;
 import com.example.menubackend.dao.UserDao;
+import com.example.menubackend.entity.utils.Ingredient;
 import com.example.menubackend.io.exception.BizException;
 import com.example.menubackend.io.exception.CommonErrorType;
 import com.example.menubackend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -67,5 +70,17 @@ public class UserServiceImpl implements UserService {
             throw new BizException(CommonErrorType.ILLEGAL_ARGUMENTS, "用户不存在"); //??stop
         }
         userDao.save(user.setUsername(username));
+    }
+
+    @Override
+    public boolean addUnlike(String uid, String ingredientName) {
+        UserEntity user = userDao.findByUid(uid);
+        if (user == null)
+            return false;
+        Ingredient ingredient = new Ingredient(ingredientName);
+        List<Ingredient> unlikeLists = user.getUnLikes();
+        unlikeLists.add(ingredient);
+        userDao.save(user.setUnLikes(unlikeLists));
+        return true;
     }
 }

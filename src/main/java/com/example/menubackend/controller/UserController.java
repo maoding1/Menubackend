@@ -3,6 +3,7 @@ package com.example.menubackend.controller;
 import com.example.menubackend.entity.UserEntity;
 import com.example.menubackend.dao.UserDao;
 import com.example.menubackend.io.pojo.CommonResponse;
+import com.example.menubackend.request.AddUnlikeRequest;
 import com.example.menubackend.request.LoginRequest;
 import com.example.menubackend.request.RegisterRequest;
 import com.example.menubackend.service.UserService;
@@ -56,5 +57,13 @@ public class UserController {
         return CommonResponse.success(200);
     }
 
-
+    @PostMapping("addUnlike")
+    public CommonResponse<?> addUnlike(@Valid @RequestBody AddUnlikeRequest request){
+        boolean result = userService.addUnlike(request.getUid(), request.getIngredientName());
+        if (!result)
+            return CommonResponse.fail(400);
+        else {
+            return CommonResponse.success(200);
+        }
+    }
 }
