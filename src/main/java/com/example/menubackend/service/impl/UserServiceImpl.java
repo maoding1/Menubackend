@@ -1,7 +1,7 @@
 package com.example.menubackend.service.impl;
 
 import com.example.menubackend.entity.UserEntity;
-import com.example.menubackend.dao.UserDao;
+import com.example.menubackend.Dao.UserDao;
 import com.example.menubackend.entity.utils.Ingredient;
 import com.example.menubackend.io.exception.BizException;
 import com.example.menubackend.io.exception.CommonErrorType;
@@ -81,6 +81,15 @@ public class UserServiceImpl implements UserService {
         List<Ingredient> unlikeLists = user.getUnLikes();
         unlikeLists.add(ingredient);
         userDao.save(user.setUnLikes(unlikeLists));
+        return true;
+    }
+
+    @Override
+    public boolean addLike(Long menuId, String uid) {
+        UserEntity user = userDao.findByUid(uid);
+        List<Long> favorMenu = user.getFavouriteMenusId();
+        favorMenu.add(menuId);
+        userDao.save(user.setFavouriteMenusId(favorMenu));
         return true;
     }
 }

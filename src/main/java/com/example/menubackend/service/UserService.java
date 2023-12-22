@@ -10,4 +10,6 @@ public interface UserService {
     void editInfo(String uid,String username);
 
     boolean addUnlike(String uid, String ingredientName);
+
+    boolean addLike(Long menuId, String uid);
 }

@@ -1,4 +1,4 @@
-package com.example.menubackend.dao;
+package com.example.menubackend.Dao;
 
 import com.example.menubackend.entity.UserEntity;
 import com.example.menubackend.entity.UserEntity;

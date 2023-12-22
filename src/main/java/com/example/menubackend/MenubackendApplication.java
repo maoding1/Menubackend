@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
 
 @SpringBootApplication
 public class MenubackendApplication {
@@ -30,9 +31,10 @@ public class MenubackendApplication {
 //			// 解析JSON数据
 //			List<MenuEntity> menus = objectMapper.readValue(file, new TypeReference<List<MenuEntity>>() {});
 //
+//			Random random = new Random();
 //			// 将解析后的数据存储到数据库中
 //			for (MenuEntity menu : menus) {
-//				menu.setClickCount(0);
+//				menu.setClickCount(random.nextInt(200));
 //				menuDao.save(menu);
 ////				System.out.println(menu);
 //			}
