@@ -1,5 +1,6 @@
 package com.example.menubackend.controller;
 
+import com.example.menubackend.entity.Category;
 import com.example.menubackend.entity.MenuEntity;
 import com.example.menubackend.entity.utils.Ingredient;
 import com.example.menubackend.io.pojo.CommonResponse;
@@ -76,6 +77,14 @@ public class MenuController {
         CommonResponse<List<MenuEntity>> response =CommonResponse.success(menuService.findMenuByIngres(ingredients));
         response.setCode(200);
         return response;
+    }
+
+    @GetMapping("ingredient")
+    /* 返回所有原材料*/
+    public CommonResponse<Category> getAllIngredients() {
+        CommonResponse<Category> response = new CommonResponse<>();
+        response.setCode(200);
+        return response.success(new Category());
     }
 
 
