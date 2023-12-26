@@ -23,6 +23,8 @@ import java.util.stream.Collectors;
 public class MenuController {
     private final MenuService menuService;
 
+    private final Category category = new Category();
+
     @PostMapping("menu")
     public CommonResponse<MenuEntity> getMenuById(@Valid @RequestBody MenuRequest request) {
         CommonResponse<MenuEntity> commonResponse = CommonResponse.success(menuService.findMenuById(request.getId()));
@@ -82,9 +84,9 @@ public class MenuController {
     @GetMapping("ingredient")
     /* 返回所有原材料*/
     public CommonResponse<Category> getAllIngredients() {
-        CommonResponse<Category> response = new CommonResponse<>();
+        CommonResponse<Category> response = CommonResponse.success(category);
         response.setCode(200);
-        return response.success(new Category());
+        return response;
     }
 
 
